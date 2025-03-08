@@ -1,60 +1,77 @@
-# DataBinding1
+# Angular Components and Data Binding
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+## Components: The Building Blocks of Angular
 
-## Development server
+Angular uses components as the Building Blocks of the application. It divides whole User Interface into multiple reusable parts called as components. components are used for reusability, modularity and flexibility in application.
+providing:
 
-To start a local development server, run:
+- **Reusability**: Components can be used multiple times across the application
+- **Modularity**: Each component handles a specific part of the UI
+- **Flexibility**: Components can be combined and nested to create complex interfaces
 
-```bash
-ng serve
+## Component Structure
+
+Every Angular component consists of four files:
+
+| File Extension       | Name           | Purpose                                            |
+| -------------------- | -------------- | -------------------------------------------------- |
+| `.component.html`    | Template file  | It is used for view                                |
+| `.component.ts`      | Component file | It is used for logic (model & controller)          |
+| `.component.css`     | Styling file   | It is used for design and style and it is optional |
+| `.component.spec.ts` | Testing file   | It is used for unit testing                        |
+
+## Data Binding
+
+Data Binding: It is a mechanism that connects template(html) and component(ts) files of a component.
+
+### Types of Data Binding
+
+There are two ways of Data Binding possible in Angular:
+
+1. one way Data binding
+2. Two way Data binding
+
+#### 1. One-Way Data Binding
+
+Using One way Data Binding, we can connect data from component file to template file or template file to component file.
+
+- Component to template
+- Template to component
+
+##### A. Component to Template
+
+**String Interpolation** (`{{}}`)
+
+we can send values from component to template using String Interpolation. it uses double braces {{}}
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  name: string = "Shubham";
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```html
+<!-- app.component.html -->
+<p>My name is {{name}}</p>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+##### B. Template to Component
 
-```bash
-ng generate --help
+**Event Binding** (`()`)
+
+It is used to send event or triggere a function by an event from HTML(Template) to TS(component)
+
+```html
+<!-- app.component.html -->
+<button (click)="display()">Click Me</button>
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+```typescript
+// app.component.ts
+export class AppComponent {
+  display() {
+    console.log("Hello world");
+  }
+}
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# data-binding-1

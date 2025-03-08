@@ -1,0 +1,11 @@
+.bhimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.bhimg img {
+  max-width: 100%;
+  height: auto;
+}
