@@ -1,9 +1,27 @@
-<div class="bhimg">
-  <img src="{{ image }}" alt="bhimg" />
-  <div>
+<!-- <div class="bhimg"> -->
+<!-- <img src="{{ image }}" alt="bhimg" /> -->
+<!-- <div>
     <h1>Hi My Name is {{ name }}</h1>
     <h2>From Movie "{{ title }}"</h2>
     <button (click)="fun()">Click Me</button>
     <h3 *ngIf="clicked">Check Console</h3>
-  </div>
+  </div> -->
+<!-- <div>
+    <input type="text" [required]="{isReqired}" [value]="{inputText}" />
+    <button [disabled]="{clickable}" (click)="disablefun(e)"></button>
+  </div> -->
+<!-- <div>
+    <p>{{ names[nameNumber] }}</p>
+    <button (click)="changeName()">Change Name</button>
+    <button [disabled]="clickable">Disable btn</button>
+  </div> -->
+<!-- </div> -->
+
+<div>
+  <p>{{ value1 }}</p>
+  <button (click)="function(2)">Add 2</button>
+  <button (click)="function(3)">Add 3</button>
+  <button [disabled]="isDisable">
+    {{ isDisable ? "Not Odd Number" : "Odd Number" }}
+  </button>
 </div>
